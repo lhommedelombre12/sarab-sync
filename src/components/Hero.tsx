@@ -40,8 +40,8 @@ const Hero = () => {
             transition={{ delay: 0.5 }}
             className="text-lg md:text-xl text-muted-foreground max-w-lg mb-10 leading-relaxed"
           >
-            On gère tes messages, on organise tes rendez-vous sur Google Agenda.
-            Tu ouvres ton agenda le matin et <strong className="text-foreground">tout est là</strong>. Magique ? Non, c'est Sarab. ✨
+            On gère tes messages, on organise tes rendez-vous directement dans ton agenda.
+            Tu l'ouvres le matin et <strong className="text-foreground">tout est là</strong>. Magique ? Non, c'est Sarab. ✨
           </motion.p>
 
           <motion.div

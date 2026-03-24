@@ -14,7 +14,7 @@ const services = [
     icon: Calendar,
     emoji: "📅",
     title: "Organisation Agenda",
-    description: "Google Agenda, c'est devenu ton meilleur pote. Chaque matin, ta journée est planifiée. Zéro stress.",
+    description: "Ton agenda, c'est devenu ton meilleur pote. Chaque matin, ta journée est planifiée. Zéro stress.",
     gradient: "from-accent to-blue",
   },
   {

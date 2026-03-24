@@ -12,7 +12,7 @@ const steps = [
     number: "02",
     emoji: "🔗",
     title: "On se connecte",
-    description: "Tu nous donnes accès à tes DMs et ton Google Agenda. C'est tout ce qu'on a besoin.",
+    description: "Tu nous donnes accès à tes DMs et ton agenda. C'est tout ce qu'on a besoin.",
   },
   {
     number: "03",

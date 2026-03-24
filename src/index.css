@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,63 +6,64 @@
 
 @layer base {
   :root {
-    --background: 30 100% 97%;
-    --foreground: 240 27% 14%;
+    --background: 250 20% 6%;
+    --foreground: 0 0% 95%;
 
-    --card: 30 60% 95%;
-    --card-foreground: 240 27% 14%;
+    --card: 250 15% 10%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 30 100% 97%;
-    --popover-foreground: 240 27% 14%;
+    --popover: 250 15% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 18 100% 60%;
+    --primary: 345 100% 65%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 27% 14%;
-    --secondary-foreground: 30 100% 97%;
+    --secondary: 250 15% 15%;
+    --secondary-foreground: 0 0% 90%;
 
-    --muted: 30 30% 92%;
-    --muted-foreground: 240 10% 45%;
+    --muted: 250 10% 18%;
+    --muted-foreground: 250 10% 55%;
 
-    --accent: 170 100% 43%;
-    --accent-foreground: 240 27% 14%;
+    --accent: 280 80% 65%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 20% 88%;
-    --input: 30 20% 88%;
-    --ring: 18 100% 60%;
+    --border: 250 15% 18%;
+    --input: 250 15% 18%;
+    --ring: 345 100% 65%;
 
     --radius: 1rem;
 
-    /* Custom tokens */
-    --sunshine: 43 100% 70%;
-    --sunshine-foreground: 240 27% 14%;
-    --coral: 18 100% 60%;
-    --coral-glow: 10 100% 65%;
-    --turquoise: 170 100% 43%;
-    --turquoise-glow: 175 80% 55%;
-    --navy: 240 27% 14%;
-    --cream: 30 100% 97%;
+    /* Custom Sarab tokens */
+    --pink: 345 100% 65%;
+    --pink-glow: 340 100% 72%;
+    --purple: 280 80% 65%;
+    --purple-glow: 275 70% 75%;
+    --blue: 220 80% 60%;
+    --cyan: 185 80% 55%;
+    --dark: 250 20% 6%;
+    --dark-card: 250 15% 10%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(18 100% 60%), hsl(10 100% 65%), hsl(43 100% 70%));
-    --gradient-accent: linear-gradient(135deg, hsl(170 100% 43%), hsl(175 80% 55%));
-    --gradient-dark: linear-gradient(135deg, hsl(240 27% 14%), hsl(240 20% 22%));
-    --shadow-playful: 0 20px 60px -15px hsl(18 100% 60% / 0.3);
-    --shadow-soft: 0 10px 40px -10px hsl(240 27% 14% / 0.1);
+    --gradient-hero: linear-gradient(135deg, hsl(345 100% 65%), hsl(280 80% 65%), hsl(220 80% 60%));
+    --gradient-pink: linear-gradient(135deg, hsl(345 100% 65%), hsl(340 100% 72%));
+    --gradient-purple: linear-gradient(135deg, hsl(280 80% 65%), hsl(220 80% 60%));
+    --gradient-fun: linear-gradient(135deg, hsl(345 100% 65%), hsl(280 80% 65%), hsl(185 80% 55%));
+    --shadow-glow: 0 0 60px -10px hsl(345 100% 65% / 0.4);
+    --shadow-purple: 0 0 60px -10px hsl(280 80% 65% / 0.3);
 
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'DM Sans', sans-serif;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 250 20% 6%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 345 100% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 250 15% 15%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 250 15% 18%;
+    --sidebar-ring: 345 100% 65%;
   }
 }
 
@@ -70,14 +71,16 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    overflow-x: hidden;
   }
-
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+  }
+  ::selection {
+    background: hsl(345 100% 65% / 0.3);
   }
 }
 
@@ -88,28 +91,44 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
-  .gradient-text-accent {
-    background: var(--gradient-accent);
+  .gradient-text-pink {
+    background: var(--gradient-pink);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
-  .blob {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  }
-
   .section-padding {
     @apply px-6 py-24 md:px-12 lg:px-24 xl:px-32;
   }
+  .glass-card {
+    background: hsl(250 15% 10% / 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(250 15% 20% / 0.5);
+  }
+  .glow-pink {
+    box-shadow: var(--shadow-glow);
+  }
+  .glow-purple {
+    box-shadow: var(--shadow-purple);
+  }
 }
 
-@layer utilities {
-  .hover-bounce {
-    @apply transition-transform duration-300;
-  }
-  .hover-bounce:hover {
-    transform: translateY(-4px) scale(1.02);
-  }
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(250 20% 6%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(345 100% 65% / 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(345 100% 65% / 0.7);
 }

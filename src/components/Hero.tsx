@@ -20,17 +20,17 @@ const Hero = () => {
             transition={{ delay: 0.2 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8"
           >
-            <span className="animate-emoji-wave inline-block">👋</span>
-            <span className="text-sm font-medium text-primary">Virtual Manager Agency</span>
+            <span className="animate-emoji-wave inline-block">🎓</span>
+            <span className="text-sm font-medium text-primary">Études en Roumanie</span>
           </motion.div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6">
-            Tes DMs gérés,
+            Tes études en
             <br />
-            <span className="gradient-text">ton agenda rempli.</span>
+            <span className="gradient-text">Roumanie,</span>
             <br />
             <span className="text-foreground/60 text-4xl md:text-5xl lg:text-5xl">
-              Toi, tu bosses. 🚀
+              on s'occupe de tout. 🇷🇴
             </span>
           </h1>
 
@@ -40,8 +40,8 @@ const Hero = () => {
             transition={{ delay: 0.5 }}
             className="text-lg md:text-xl text-muted-foreground max-w-lg mb-10 leading-relaxed"
           >
-            On gère tes messages, on organise tes rendez-vous directement dans ton agenda.
-            Tu l'ouvres le matin et <strong className="text-foreground">tout est là</strong>. Magique ? Non, c'est Sarab. ✨
+            Médecine, ingénierie, business — étudie en <strong className="text-foreground">français, anglais ou allemand</strong>.
+            Accompagnement complet pour <strong className="text-primary">moins de 3 000€</strong>. ✨
           </motion.p>
 
           <motion.div
@@ -52,42 +52,43 @@ const Hero = () => {
           >
             <motion.a
               href="#contact"
-              whileHover={{ scale: 1.05, boxShadow: "0 0 40px hsl(345 100% 65% / 0.4)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 0 40px hsl(42 90% 55% / 0.4)" }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 rounded-full text-lg font-semibold text-primary-foreground"
               style={{ background: "var(--gradient-hero)" }}
             >
-              Démarre maintenant 🎯
+              Je veux étudier là-bas 🚀
             </motion.a>
             <motion.a
-              href="#méthode"
+              href="#pourquoi"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 rounded-full text-lg font-semibold border border-foreground/20 text-foreground hover:border-primary/50 transition-colors"
             >
-              Comment ça marche ?
+              Pourquoi la Roumanie ?
             </motion.a>
           </motion.div>
 
-          {/* Social proof */}
+          {/* Trust badges */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
-            className="mt-12 flex items-center gap-4"
+            className="mt-12 flex flex-wrap items-center gap-6"
           >
-            <div className="flex -space-x-3">
-              {["😎", "🤩", "😍", "🔥"].map((e, i) => (
-                <div
-                  key={i}
-                  className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-lg border-2 border-background"
-                >
-                  {e}
-                </div>
-              ))}
-            </div>
+            {[
+              { emoji: "🇫🇷", label: "Français" },
+              { emoji: "🇬🇧", label: "Anglais" },
+              { emoji: "🇩🇪", label: "Allemand" },
+            ].map((lang) => (
+              <div key={lang.label} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="text-xl">{lang.emoji}</span>
+                <span>{lang.label}</span>
+              </div>
+            ))}
+            <div className="h-6 w-px bg-border" />
             <p className="text-sm text-muted-foreground">
-              <strong className="text-foreground">+30 créateurs</strong> nous font confiance
+              <strong className="text-foreground">100% remboursable</strong> si pas d'admission
             </p>
           </motion.div>
         </motion.div>

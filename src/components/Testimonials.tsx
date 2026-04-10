@@ -1,87 +1,44 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Star } from "lucide-react";
 
 const testimonials = [
-  {
-    name: "Léa M.",
-    role: "Coach fitness",
-    avatar: "💪",
-    text: "Avant Sarab, je passais 2h par jour dans mes DMs. Maintenant je me lève, j'ouvre mon agenda, et ma journée est planifiée. C'est un GAME CHANGER.",
-    rating: 5,
-  },
-  {
-    name: "Thomas K.",
-    role: "Consultant business",
-    avatar: "🧠",
-    text: "J'étais sceptique au début. Mais quand j'ai vu mes rendez-vous augmenter de 300% en un mois... j'ai compris. Sarab c'est du sérieux.",
-    rating: 5,
-  },
-  {
-    name: "Sarah B.",
-    role: "Créatrice de contenu",
-    avatar: "🎨",
-    text: "L'équipe Sarab comprend exactement mon ton et ma façon de parler. Mes abonnés ne voient même pas la différence. Incroyable 🫶",
-    rating: 5,
-  },
+  { name: "Yasmine B.", field: "Médecine — Cluj-Napoca", emoji: "🩺", text: "Sarab m'a accompagnée de A à Z. Sans eux, je n'aurais jamais osé partir étudier la médecine en Roumanie. Aujourd'hui je suis en 3ème année !", stars: 5 },
+  { name: "Karim M.", field: "Ingénierie — Bucarest", emoji: "⚙️", text: "Le processus était tellement simple. Ils ont géré tout le dossier, les traductions, le visa. J'ai juste eu à faire mes valises.", stars: 5 },
+  { name: "Sofia L.", field: "Business — Timișoara", emoji: "📊", text: "J'hésitais entre plusieurs pays. Sarab m'a convaincu avec la Roumanie et franchement c'est le meilleur choix que j'ai fait. Coût de vie imbattable !", stars: 5 },
+  { name: "Mehdi A.", field: "Dentaire — Iași", emoji: "🦷", text: "L'équipe est super réactive, ils répondent en moins d'une heure. Le remboursement en cas de non-admission m'a rassuré. Au final, j'ai été accepté !", stars: 5 },
 ];
-
-const TestimonialCard = ({ t, index }: { t: typeof testimonials[0]; index: number }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50, rotate: index % 2 === 0 ? -2 : 2 }}
-      animate={isInView ? { opacity: 1, y: 0, rotate: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
-      whileHover={{ y: -5, scale: 1.02 }}
-      className="glass-card rounded-2xl p-8 relative"
-    >
-      <div className="flex gap-1 mb-4">
-        {Array.from({ length: t.rating }).map((_, i) => (
-          <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-        ))}
-      </div>
-      <p className="text-foreground/90 mb-6 leading-relaxed italic">"{t.text}"</p>
-      <div className="flex items-center gap-3">
-        <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-2xl">
-          {t.avatar}
-        </div>
-        <div>
-          <p className="font-semibold font-display text-foreground">{t.name}</p>
-          <p className="text-sm text-muted-foreground">{t.role}</p>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
 
 const Testimonials = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="témoignages" className="section-padding" ref={ref}>
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="text-primary font-semibold text-sm tracking-wider uppercase mb-4 block">
-            Ils nous kiffent 💜
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
-            Ce que disent <span className="gradient-text">nos clients.</span>
-          </h2>
+    <section id="temoignages" className="section-padding relative overflow-hidden" ref={ref}>
+      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[120px]" />
+      <div className="max-w-6xl mx-auto relative">
+        <motion.div initial={{ opacity: 0, y: 40 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
+          <span className="text-primary font-semibold text-sm tracking-wider uppercase mb-4 block">Témoignages 💬</span>
+          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">Ils l'ont fait, <span className="gradient-text">pourquoi pas toi ?</span></h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {testimonials.map((t, i) => (
-            <TestimonialCard key={t.name} t={t} index={i} />
+            <motion.div key={t.name} initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.1 }} whileHover={{ y: -5 }} className="glass-card rounded-2xl p-8 hover:border-primary/30 transition-all duration-300">
+              <div className="flex gap-1 mb-4">
+                {Array.from({ length: t.stars }).map((_, j) => (
+                  <Star key={j} className="w-4 h-4 fill-primary text-primary" />
+                ))}
+              </div>
+              <p className="text-foreground/90 mb-6 leading-relaxed italic">"{t.text}"</p>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">{t.emoji}</span>
+                <div>
+                  <h4 className="font-bold font-display text-foreground text-sm">{t.name}</h4>
+                  <p className="text-xs text-muted-foreground">{t.field}</p>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

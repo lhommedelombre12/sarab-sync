@@ -51,10 +51,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        pink: "hsl(var(--pink))",
-        purple: "hsl(var(--purple))",
-        blue: "hsl(var(--blue))",
-        cyan: "hsl(var(--cyan))",
+        gold: "hsl(var(--gold))",
+        "deep-blue": "hsl(var(--deep-blue))",
+        "royal-blue": "hsl(var(--royal-blue))",
+        emerald: "hsl(var(--emerald))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -117,6 +117,10 @@ export default {
           "50%": { transform: "rotate(10deg)" },
           "60%, 100%": { transform: "rotate(0deg)" },
         },
+        "count-up": {
+          "0%": { transform: "translateY(100%)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -129,6 +133,7 @@ export default {
         "wiggle": "wiggle 1s ease-in-out infinite",
         "bounce-soft": "bounce-soft 2s ease-in-out infinite",
         "emoji-wave": "emoji-wave 2.5s ease-in-out infinite",
+        "count-up": "count-up 0.5s ease-out",
       },
     },
   },

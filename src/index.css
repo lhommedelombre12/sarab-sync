@@ -6,64 +6,64 @@
 
 @layer base {
   :root {
-    --background: 250 20% 6%;
-    --foreground: 0 0% 95%;
+    --background: 220 25% 5%;
+    --foreground: 45 20% 95%;
 
-    --card: 250 15% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 220 20% 9%;
+    --card-foreground: 45 20% 95%;
 
-    --popover: 250 15% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 220 20% 9%;
+    --popover-foreground: 45 20% 95%;
 
-    --primary: 345 100% 65%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 42 90% 55%;
+    --primary-foreground: 220 25% 5%;
 
-    --secondary: 250 15% 15%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 220 20% 14%;
+    --secondary-foreground: 45 15% 85%;
 
-    --muted: 250 10% 18%;
-    --muted-foreground: 250 10% 55%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 55%;
 
-    --accent: 280 80% 65%;
+    --accent: 210 70% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 250 15% 18%;
-    --input: 250 15% 18%;
-    --ring: 345 100% 65%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 42 90% 55%;
 
     --radius: 1rem;
 
-    /* Custom Sarab tokens */
-    --pink: 345 100% 65%;
-    --pink-glow: 340 100% 72%;
-    --purple: 280 80% 65%;
-    --purple-glow: 275 70% 75%;
-    --blue: 220 80% 60%;
-    --cyan: 185 80% 55%;
-    --dark: 250 20% 6%;
-    --dark-card: 250 15% 10%;
+    /* Custom Sarab Romania tokens */
+    --gold: 42 90% 55%;
+    --gold-glow: 38 85% 65%;
+    --deep-blue: 220 60% 45%;
+    --royal-blue: 215 70% 55%;
+    --romania-red: 0 75% 50%;
+    --emerald: 155 60% 45%;
+    --dark: 220 25% 5%;
+    --dark-card: 220 20% 9%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(345 100% 65%), hsl(280 80% 65%), hsl(220 80% 60%));
-    --gradient-pink: linear-gradient(135deg, hsl(345 100% 65%), hsl(340 100% 72%));
-    --gradient-purple: linear-gradient(135deg, hsl(280 80% 65%), hsl(220 80% 60%));
-    --gradient-fun: linear-gradient(135deg, hsl(345 100% 65%), hsl(280 80% 65%), hsl(185 80% 55%));
-    --shadow-glow: 0 0 60px -10px hsl(345 100% 65% / 0.4);
-    --shadow-purple: 0 0 60px -10px hsl(280 80% 65% / 0.3);
+    --gradient-hero: linear-gradient(135deg, hsl(42 90% 55%), hsl(38 85% 65%), hsl(210 70% 55%));
+    --gradient-gold: linear-gradient(135deg, hsl(42 90% 55%), hsl(38 85% 65%));
+    --gradient-blue: linear-gradient(135deg, hsl(220 60% 45%), hsl(210 70% 55%));
+    --gradient-academic: linear-gradient(135deg, hsl(42 90% 55%), hsl(0 75% 50%), hsl(220 60% 45%));
+    --shadow-glow: 0 0 60px -10px hsl(42 90% 55% / 0.4);
+    --shadow-blue: 0 0 60px -10px hsl(210 70% 55% / 0.3);
 
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'DM Sans', sans-serif;
 
-    --sidebar-background: 250 20% 6%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 345 100% 65%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 250 15% 15%;
-    --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 250 15% 18%;
-    --sidebar-ring: 345 100% 65%;
+    --sidebar-background: 220 25% 5%;
+    --sidebar-foreground: 45 20% 95%;
+    --sidebar-primary: 42 90% 55%;
+    --sidebar-primary-foreground: 220 25% 5%;
+    --sidebar-accent: 220 20% 14%;
+    --sidebar-accent-foreground: 45 15% 85%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 42 90% 55%;
   }
 }
 
@@ -80,7 +80,7 @@
     font-family: var(--font-display);
   }
   ::selection {
-    background: hsl(345 100% 65% / 0.3);
+    background: hsl(42 90% 55% / 0.3);
   }
 }
 
@@ -91,8 +91,8 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .gradient-text-pink {
-    background: var(--gradient-pink);
+  .gradient-text-gold {
+    background: var(--gradient-gold);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -101,15 +101,15 @@
     @apply px-6 py-24 md:px-12 lg:px-24 xl:px-32;
   }
   .glass-card {
-    background: hsl(250 15% 10% / 0.6);
+    background: hsl(220 20% 9% / 0.6);
     backdrop-filter: blur(20px);
-    border: 1px solid hsl(250 15% 20% / 0.5);
+    border: 1px solid hsl(220 15% 20% / 0.5);
   }
-  .glow-pink {
+  .glow-gold {
     box-shadow: var(--shadow-glow);
   }
-  .glow-purple {
-    box-shadow: var(--shadow-purple);
+  .glow-blue {
+    box-shadow: var(--shadow-blue);
   }
 }
 
@@ -123,12 +123,12 @@ html {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(250 20% 6%);
+  background: hsl(220 25% 5%);
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(345 100% 65% / 0.4);
+  background: hsl(42 90% 55% / 0.4);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(345 100% 65% / 0.7);
+  background: hsl(42 90% 55% / 0.7);
 }
